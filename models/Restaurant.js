@@ -1,3 +1,5 @@
+// models/Restaurant.js
+
 import mongoose from 'mongoose';
 
 const restaurantSchema = new mongoose.Schema({
@@ -5,15 +7,19 @@ const restaurantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  location: String,
-  cuisine: String,
-  rating: {
-    type: Number,
-    default: 0,
+  cuisine: {
+    type: String,
+  },
+  address: {
+    type: String,
+  },
+  phone: {
+    type: String,
   },
 }, {
   timestamps: true
 });
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
+
 export default Restaurant;
